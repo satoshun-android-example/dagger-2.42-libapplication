@@ -19,6 +19,6 @@ android {
 }
 
 dependencies {
-  implementation libs.android.dagger.hilt.android
-  kapt libs.android.dagger.hilt.compiler
+  implementation "com.google.dagger:hilt-android:2.41"
+  kapt "com.google.dagger:hilt-compiler:2.41"
 }

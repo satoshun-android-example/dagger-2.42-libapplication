@@ -4,10 +4,9 @@ buildscript {
     mavenCentral()
   }
   dependencies {
-    classpath libs.android.gradle
-    classpath libs.kotlin.gradle
-    classpath libs.android.dagger.hilt.gradle
-    classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21'
+    classpath "com.android.tools.build:gradle:7.2.0"
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21"
+    classpath "com.google.dagger:hilt-android-gradle-plugin:2.41"
   }
 }
 
@@ -20,18 +19,6 @@ allprojects {
   tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
     kotlinOptions {
       jvmTarget = JavaVersion.VERSION_11
-
-      freeCompilerArgs += [
-          // https://mobile.twitter.com/ZacSweers/status/1520399593577582593
-          "-Xsam-conversions=class"
-      ]
-    }
-  }
-
-  // https://issuetracker.google.com/issues/194113162
-  tasks.withType(JavaCompile).configureEach {
-    javaCompiler = javaToolchains.compilerFor {
-      languageVersion = JavaLanguageVersion.of(11)
     }
   }
 }
