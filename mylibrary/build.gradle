@@ -1,0 +1,24 @@
+plugins {
+  id "com.android.library"
+  id 'kotlin-android'
+  id 'kotlin-kapt'
+  id 'dagger.hilt.android.plugin'
+}
+
+android {
+  compileSdkVersion 31
+
+  defaultConfig {
+    minSdkVersion 21
+    targetSdkVersion 31
+  }
+
+  kotlinOptions {
+    jvmTarget = "11"
+  }
+}
+
+dependencies {
+  implementation libs.android.dagger.hilt.android
+  kapt libs.android.dagger.hilt.compiler
+}
