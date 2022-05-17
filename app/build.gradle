@@ -32,20 +32,6 @@ android {
   kotlinOptions {
     jvmTarget = '11'
   }
-
-  buildFeatures {
-    compose true
-  }
-
-  composeOptions {
-    kotlinCompilerExtensionVersion libs.versions.compose.get()
-  }
-
-  testOptions {
-    unitTests {
-      includeAndroidResources = true
-    }
-  }
 }
 
 dependencies {
@@ -56,13 +42,4 @@ dependencies {
 
   implementation libs.android.dagger.hilt.android
   kapt libs.android.dagger.hilt.compiler
-
-  testImplementation libs.bundles.test
-
-  androidTestImplementation libs.bundles.android.test
-  debugImplementation libs.bundles.android.debug.test
-}
-
-kapt {
-  correctErrorTypes true
 }
