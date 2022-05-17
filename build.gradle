@@ -1,5 +1,5 @@
 buildscript {
-  ext.daggerHiltVersion = "2.41"
+  ext.daggerHiltVersion = "2.42"
 
   repositories {
     google()
